@@ -1,0 +1,14 @@
+body,html{
+    padding: 0;
+    margin: 0;
+    background: #808080;
+    width: 100%;
+}
+
+.container{
+    margin: 20px auto;
+    padding: 10px;
+    width: 400px;
+    background-color: aquamarine;
+    height: 100%;   
+}

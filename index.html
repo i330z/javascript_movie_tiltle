@@ -1,0 +1,64 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+    <h3>Enter Movies Name</h3>
+    <input type="text" id="title_name">
+    <button id="title">click</button>
+    <!-- <p id="title_write"></p> -->
+    <ul id="title_write">
+        
+    </ul>
+
+    <h3>Search Engine</h3>
+    <button onclick="window.location = 'https://www.google.com';">Google</button>
+
+    <div id="div1">
+        <button onclick="addpara()">Add Para</button>
+        <button onclick="removepara()">Remove Para</button>
+        
+    </div>
+    </div>
+
+    <script>
+    window.onload = function(){
+        alert("loaded page");
+    }    
+    document.getElementById("title").addEventListener("click", myFunction);
+
+    function myFunction(){
+        var x = document.getElementById("title_name").value;
+        var ul = document.getElementById("title_write");
+        var li = document.createElement("li");
+        li.appendChild(document.createTextNode(x));
+        ul.appendChild(li);
+        // document.getElementById("title_write").innerHTML= x;
+        document.getElementById("title_name").value = "";
+    }
+    
+    function addpara(){
+        var para = document.createElement("p");
+        var node = document.createTextNode("this is a paragraph");
+        para.setAttribute("id","par_1");
+        para.appendChild(node);
+        
+
+        var element = document.getElementById("div1");
+        element.appendChild(para);
+    }
+
+    function removepara(){
+        var parent = document.getElementById("div1");
+        var child = document.getElementById("par_1");
+        parent.removeChild(child);
+    }
+
+    </script>
+</body>
+</html>
